@@ -1,6 +1,57 @@
 spectrogram
 ===========
 
+
+# ‼️FORK INFO‼️
+
+‼️I am not the original author of this program, nor a C++ developer. I only updated and improved the scripts for creating YouTube videos.
+
+YouTube channel: https://www.youtube.com/@ClassicalSpectrograms/
+
+## How I create videos
+
+1. Download the video (in low quality to save space) into a separate folder named after the piece, and name it `original_video.mp4`.
+2. Open the console and `cd` into this folder.
+3. Run:
+   ```bash
+   python "path\to\spectrogram\scripts\extract_audio.py" original_video.mp4
+   ```
+
+4. Launch `path\to\spectrogram\bin\spectrogram.exe` and create the spectrogram with these settings:
+
+   **Spectrogram parameters:**
+
+   * Frequency scale: logarithmic
+   * Intensity scale: logarithmic
+   * Base frequency: 55.00 Hz
+   * Max frequency: 22050.00 Hz
+   * Pixels per second: 100
+   * Brightness correction: none
+   * Palette: `path\to\spectrogram\palettes\wb.png`
+
+   **Frequency-domain filters:**
+
+   * Bandwidth: 100 cents
+   * Window function: Hann
+   * Overlap: 80.0%
+
+   Save the resulting spectrogram in the same folder as the piece with the name `spectrogram.png`.
+
+5. Run:
+
+   ```bash
+   python "D:\spectrogram-master\scripts\make_video.py" --image spectrogram.png --audio audio.mp3 --output "spectrogram_video.mp4"
+   ```
+   > This is the longest step
+
+6. The final video will be generated as `spectrogram_video.mp4` in the same folder. Done ✅
+
+---
+
+---
+
+# Original README
+
 This GUI program can generate spectrograms from sound files and synthesize spectrograms back into sound (with large loss of fidelity).
 
 The program can be built on Linux or you can use the Windows binary (bin/spectrogram.exe).  The program was a part of my 2010 bachelor's thesis and there will be no more development.  It was inspired heavily by the ARSS program: http://arss.sourceforge.net/
